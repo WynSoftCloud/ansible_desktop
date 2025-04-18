@@ -4,6 +4,6 @@
   become: true
 
   tasks:
-  - name: install htop
+  - name: install neofetch
     package:
-      name: htop
+      name: neofetch
