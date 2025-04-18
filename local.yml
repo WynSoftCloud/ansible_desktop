@@ -12,6 +12,10 @@
         - vim-nox
 
   - name: copy wallpaper file
+    file:
+      path: /usr/share/backgrounds
+      state: directory
+      mode: 755
     copy:
       src: files/wallpaper.png
       dest: /usr/share/backgrounds/ansible-wallpaper.png
