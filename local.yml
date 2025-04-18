@@ -10,3 +10,30 @@
         - neofetch
         - tmux
         - vim-nox
+
+  - name: copy wallpaper file
+    copy:
+      src: files/wallpaper.png
+      dest: /usr/share/backgrounds/ansible-wallpaper.png
+      owner: root
+      group: root
+
+  - name: set wallpaper
+    ini_file:
+      path: /home/wayne/.config/pcmanfm/LXDE-pi/desktop-items-HDMI-A-2.conf
+      section: *
+      option: wallpaper
+      value: "/usr/share/backgrounds/ansible-wallpaper.png"
+      owner: wayne
+      group: wayne
+      backup: true
+
+  - name: set wallpaper position
+    ini_file:
+      path: /home/wayne/.config/pcmanfm/LXDE-pi/desktop-items-HDMI-A-2.conf
+      section: *
+      option: wallpaper_mode
+      value: "crop"
+      owner: wayne
+      group: wayne
+
