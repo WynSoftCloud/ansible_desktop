@@ -43,3 +43,16 @@
       owner: wayne
       group: wayne
 
+  - name: copy .bashrc file
+    copy:
+      src: files/bashrc
+      dest: /home/wayne/.bashrc
+      owner: wayne
+      group: wayne
+
+  - name: copy .bashrc file for root user
+    copy:
+      src: files/bashrc
+      dest: /root/.bashrc
+      owner: root
+      group: root
