@@ -27,7 +27,7 @@
   - name: set wallpaper
     ini_file:
       path: /home/wayne/.config/pcmanfm/LXDE-pi/desktop-items-HDMI-A-2.conf
-      section: "'*'"
+      section: "*"
       option: wallpaper
       value: "/usr/share/backgrounds/ansible-wallpaper.png"
       owner: wayne
