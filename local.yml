@@ -11,11 +11,13 @@
         - tmux
         - vim-nox
 
-  - name: copy wallpaper file
+  - name: Create wallpaper directory
     file:
       path: /usr/share/backgrounds
       state: directory
-      mode: 755
+      mode: '0755'
+
+  - name: copy wallpaper file
     copy:
       src: files/wallpaper.png
       dest: /usr/share/backgrounds/ansible-wallpaper.png
