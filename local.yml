@@ -56,3 +56,23 @@
       dest: /root/.bashrc
       owner: root
       group: root
+
+  - name: add ansible user
+    user:
+      name: wynbot
+      system: yes
+
+  - name: set up sudo for ansible user
+    copy:
+      src: files/sudoer_wynbot
+      dest: /etc/sudoers.d/wynbot 
+      owner: root
+      group: root
+      mode: 0440
+
+  - name: add ansible-pull cron job
+    cron:
+      name: ansible auto-provision
+      user: wynbot
+      minute: "*/10"
+      job: ansible-pull -o -U https://github.com/WynSoftCloud/ansible_desktop.git
