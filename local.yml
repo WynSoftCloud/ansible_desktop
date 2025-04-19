@@ -50,6 +50,13 @@
       owner: wayne
       group: wayne
 
+  - name: copy .bash_alias file
+    copy:
+      src: files/bash_aliases
+      dest: /home/wayne/.bash_aliases
+      owner: wayne
+      group: wayne
+
   - name: copy .bashrc file for root user
     copy:
       src: files/bashrc
