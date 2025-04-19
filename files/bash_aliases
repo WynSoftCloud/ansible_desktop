@@ -42,3 +42,6 @@ alias j='jobs -l'
 alias svim='sudo vim'
 alias tn=' tmux new -s'
 alias weather='curl wttr.in'
+
+# relead bash config
+alias reload='source ~/.bashrc'
